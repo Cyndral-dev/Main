@@ -2806,14 +2806,10 @@ function obj:Window(cfw)
 			end
 			
 			return InSec
-		end
-		-- End of AddSection function
-		
+		end		
 		Counts = Counts + 1
 		return Sec
-	end
-	-- End of AddTab function
-	
+	end	
 	return UITab
 end
 

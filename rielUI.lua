@@ -2868,7 +2868,7 @@ function obj:spawnWindow(config)
     cfw.DiscordDescription = ""
     cfw.KeyCode = Enum.KeyCode.RightControl
     
-    if config.Setup then
+    if config and config.Setup then
         cfw.Title = config.Setup.Name or cfw.Title
         cfw.Description = config.Setup.Description or cfw.Description
         cfw.UseAcrylic = config.Setup["Enable Acrylic"] == "auto" or config.Setup["Enable Acrylic"] == true or cfw.UseAcrylic
@@ -2879,10 +2879,9 @@ function obj:spawnWindow(config)
         
         if config.Setup.KeyCode then
             cfw.KeyCode = config.Setup.KeyCode
-        end
-    end
+        end    end
     
-    if config.Info and config.Info.Enable then
+    if config and config.Info and config.Info.Enable then
         cfw.User = config.Info.Name or cfw.User
         cfw.IconUser = config.Info.Logo or cfw.IconUser
         

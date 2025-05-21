@@ -1,3 +1,7 @@
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("Window") then
+    game.Players.LocalPlayer.PlayerGui.Window:Destroy()
+end
+
 local obj = {
 	TweenService = game:GetService("TweenService"),
 	player = game.Players.LocalPlayer,

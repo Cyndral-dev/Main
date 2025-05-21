@@ -2526,3 +2526,4 @@ function obj:Window(cfw)
 
 	return API
 end
+return obj

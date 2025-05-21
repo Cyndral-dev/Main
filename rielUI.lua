@@ -2810,7 +2810,20 @@ function obj:Window(cfw)
 		Counts = Counts + 1
 		return Sec
 	end	
-	return UITab
+	local API = {}
+	API.AddTab = function(self, ...)
+		return UITab:AddTab(...)
+	end
+	API.Window = Window11
+	API.WindowElements = {
+		Top = Top,
+		LayersTab = LayersTab,
+		Info = Info,
+		Layers = Layers,
+		UITab = UITab
+	}
+	
+	return API
 end
 
 function spawnHideButton(WindowInstance, KeyCode)

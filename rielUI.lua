@@ -2544,6 +2544,8 @@ function obj:Window(cfw)
 				UICorner_Para.Parent = Paragraph
 				return Paragraph
 			end
+			InSec.AddParagraph = InSec.AddParagraph
+			InSec.AddDropdown = InSec.AddDropdown
 			return InSec
 		end
 		Counts = Counts + 1

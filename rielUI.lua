@@ -715,7 +715,6 @@ function obj:Window(cfw)
 	UIStroke_2.Parent = SearchDecide_2
 	UIStroke_2.Color = Color3.fromRGB(1, 131, 252)
 	UIStroke_2.Transparency = 0.999
-	UIStroke_2.Thickness = 0.600
 	UIStroke_3.Parent = SearchDecide
 	UIStroke_3.Color = Color3.fromRGB(255, 255, 255)
 	UIStroke_3.Transparency = 0.950
@@ -2492,6 +2491,59 @@ function obj:Window(cfw)
 					ConfigDiscord.Callback()
 				end)
 			end
+			function InSec:AddParagraph(Mode, ConfigParagraph)
+				if Mode == "In" then
+					FeatureParent = ScrollLayers_2
+				else
+					FeatureParent = ScrollLayers
+				end
+				ConfigParagraph = ConfigParagraph or {}
+				ConfigParagraph.Title = ConfigParagraph.Title or "Paragraph"
+				ConfigParagraph.Content = ConfigParagraph.Content or ""
+				ConfigParagraph.Icon = ConfigParagraph.Icon or cftab.Icon
+				local Paragraph = Instance.new("Frame")
+				local ParagraphTitle = Instance.new("TextLabel")
+				local ParagraphContent = Instance.new("TextLabel")
+				local UICorner_Para = Instance.new("UICorner")
+				Paragraph.Name = ConfigParagraph.Title
+				Paragraph.Parent = FeatureParent
+				Paragraph.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				Paragraph.BackgroundTransparency = 0.970
+				Paragraph.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				Paragraph.BorderSizePixel = 0
+				Paragraph.LayoutOrder = 10
+				Paragraph.Size = UDim2.new(1, -8, 0, 45)
+				ParagraphTitle.Name = "ParagraphTitle"
+				ParagraphTitle.Parent = Paragraph
+				ParagraphTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				ParagraphTitle.BackgroundTransparency = 0.999
+				ParagraphTitle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				ParagraphTitle.BorderSizePixel = 0
+				ParagraphTitle.Position = UDim2.new(0, 40, 0, 11)
+				ParagraphTitle.Size = UDim2.new(1, -52, 0, 12)
+				ParagraphTitle.Font = Enum.Font.GothamBold
+				ParagraphTitle.Text = ConfigParagraph.Title
+				ParagraphTitle.TextColor3 = Color3.fromRGB(230, 230, 230)
+				ParagraphTitle.TextSize = 12.000
+				ParagraphTitle.TextXAlignment = Enum.TextXAlignment.Left
+				ParagraphContent.Name = "ParagraphContent"
+				ParagraphContent.Parent = Paragraph
+				ParagraphContent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				ParagraphContent.BackgroundTransparency = 0.999
+				ParagraphContent.BorderColor3 = Color3.fromRGB(0, 0, 0)
+				ParagraphContent.BorderSizePixel = 0
+				ParagraphContent.Position = UDim2.new(0, 40, 0, 21)
+				ParagraphContent.Size = UDim2.new(1, -52, 0, 11)
+				ParagraphContent.Font = Enum.Font.Gotham
+				ParagraphContent.Text = ConfigParagraph.Content
+				ParagraphContent.TextColor3 = Color3.fromRGB(230, 230, 230)
+				ParagraphContent.TextSize = 11.000
+				ParagraphContent.TextTransparency = 0.700
+				ParagraphContent.TextXAlignment = Enum.TextXAlignment.Left
+				UICorner_Para.CornerRadius = UDim.new(0, 4)
+				UICorner_Para.Parent = Paragraph
+				return Paragraph
+			end
 			return InSec
 		end
 		Counts = Counts + 1
@@ -2530,4 +2582,6 @@ function obj:Window(cfw)
 
 	return API
 end
+
+
 return obj
